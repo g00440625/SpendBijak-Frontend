@@ -46,7 +46,7 @@ function Dashboard() {
   const handleAddExpense = async () => {
     try {
       const response = await axios.post(
-        "http://localhost:8080/api/expenses", {
+        "http://13.48.96.27:8080/api/expenses", {
         amount: Number(expenseAmount),
         category: expenseCategory,
         date: new Date().toISOString().slice(0, 10),
@@ -117,6 +117,21 @@ function Dashboard() {
           </div>
         </div>
         <div className="grid grid-cols-3 gap-4">
+        </div>
+
+        <div className="grid grid-cols-2 gap-4 mt-4">
+          <div className="bg-blue-50 p-4 rounded-lg text-center shadow-sm">
+            <p className="text-sm text-gray-500">Savings</p>
+            <p className="text-xl font-bold text-blue-600">
+              €{summary.savings}
+            </p>
+          </div>
+          <div className="bg-purple-50 p-4 rounded-lg text-center shadow-sm">
+            <p className="text-sm text-gray-500">Monthly Budget</p>
+            <p className="text-xl font-bold text-purple-600">
+              €{summary.monthlyBudget}
+            </p>
+          </div>
         </div>
 
         {/* ===== ADD EXPENSE ===== */}
