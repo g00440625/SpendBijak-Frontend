@@ -29,7 +29,7 @@ function Dashboard() {
   useEffect(() => {
     const fetchSummary = async () => {
       try {
-        const response = await axios.get(`http://localhost:8080/api/summary/user/${userId}`, {
+        const response = await axios.get(`https://api.heleneathalia.ie/api/summary/user/${userId}`, {
           headers: {
             Authorization: `Bearer ${token}`
           }
@@ -46,7 +46,7 @@ function Dashboard() {
   const handleAddExpense = async () => {
     try {
       const response = await axios.post(
-        "http://13.48.96.27:8080/api/expenses", {
+        "https://api.heleneathalia.ie/api/expenses", {
         amount: Number(expenseAmount),
         category: expenseCategory,
         date: new Date().toISOString().slice(0, 10),
@@ -67,7 +67,7 @@ function Dashboard() {
   // Decision handler
   const handleDecision = async () => {
     try {
-      const response = await axios.post(`http://localhost:8080/api/decision/user/${userId}`, {
+      const response = await axios.post(`https://api.heleneathalia.ie/api/decision/user/${userId}`, {
         purchaseAmount: Number(purchaseAmount),
         category: purchaseCategory
       }, {

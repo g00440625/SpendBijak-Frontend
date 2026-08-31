@@ -15,7 +15,7 @@ function Register() {
   const handleRegister = async () => {
     try {
       const response = await axios.post(
-        "http://13.48.96.27:8080/api/auth/register",
+        "https://api.heleneathalia.ie/api/auth/register",
         { name, email, password, monthlySalary, savings, monthlyBudget }
       );
       navigate("/login");
